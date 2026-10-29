@@ -1,5 +1,4 @@
 ---
-import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import { Icon } from 'astro-icon/components';
 import projectPages from '../data/projects.json';
 // Use curated Cover images when available; retain existing images for unmatched projects.
@@ -165,7 +164,6 @@ projects.sort((a, b) => latestYear(b.year) - latestYear(a.year));
 <!doctype html>
 <html lang="en">
   <head>
-    <GoogleAnalytics />
     <meta charset="UTF-8" />
 
     <meta
