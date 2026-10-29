@@ -1,0 +1,21 @@
+---
+// Development previews do not load analytics.
+const enabled = import.meta.env.PROD;
+---
+{enabled && <script is:inline>
+  (() => {
+    if (!['www.junhuang.art', 'junhuang.art'].includes(window.location.hostname)) return;
+    if (window.__junHuangAnalyticsLoaded) return;
+    window.__junHuangAnalyticsLoaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-97X89CQS8D');
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-97X89CQS8D';
+    document.head.appendChild(script);
+  })();
+</script>}
